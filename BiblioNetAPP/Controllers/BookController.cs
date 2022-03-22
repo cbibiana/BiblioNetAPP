@@ -24,9 +24,8 @@ namespace BiblioNetAPP.Controllers
             {
                 return View(book);
             }
-            return View();
 
-            book.Id = 1;
+            book.Author = 1;
             book.Price = 1000;
             repositorieBook.Create(book);
 

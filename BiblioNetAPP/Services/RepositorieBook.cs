@@ -20,7 +20,7 @@ namespace BiblioNetAPP.Services
         public void Create(Book book)
         {
             using var connection = new SqlConnection(connectionString);
-            var id = connection.QuerySingle<int>($@"INSERT INTO Book (BookName, Author, Price) VALUES(@BookName, @Author, @Price); SELECT SCOPE_IDENTITY();", book);
+            var id = connection.QuerySingle<int>($@"INSERT INTO Books (BookName, Author, Price) VALUES(@BookName, @Author, @Price); SELECT SCOPE_IDENTITY();", book);
 
             book.Id = id;
         }
